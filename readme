@@ -1,0 +1,10 @@
+To Download:
+	Either closne this repository (https://github.com/Mejjnor/dragontail.git) or use Github's download option and unzip in a convenient location.
+
+Running pre-requisits:
+	Python 2.7
+	Installed selenium package ("pip install selenium" should take care of it)
+	Chrome Driver app downloaded and included either in global path or python path
+	
+To Run:
+	Open a command-line interface in the project's folder and use "python -m unittest discover"

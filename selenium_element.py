@@ -14,7 +14,8 @@ class SeleniumElement(object):
         self.locator = locator_
     
     def find(self):
-        return self.driver.find_element(self.locator.by, self.locator.identifier)
+        return self.driver.find_element(self.locator.by,
+                                        self.locator.identifier)
     
     def wait_for(self, timeout):
         '''

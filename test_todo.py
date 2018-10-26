@@ -1,10 +1,9 @@
-import os
+import time
+import logging
 import unittest
 from unittest.case import TestCase
 from selenium.webdriver.chrome.webdriver import WebDriver
 from todo_page import ToDoPage
-import logging
-import time
 
 
 class TestClusterPage(TestCase):

@@ -2,7 +2,8 @@ To Download:
 	Either closne this repository (https://github.com/Mejjnor/dragontail.git) or use Github's download option and unzip in a convenient location.
 
 Running pre-requisits:
-	Python 2.7
+	Python 2.7 (e.g. https://www.python.org/downloads/release/python-2715/)
+	Install Python PIP (instructions at https://www.makeuseof.com/tag/install-pip-for-python/)
 	Installed selenium package ("pip install selenium" should take care of it)
 	Chrome Driver app downloaded and included either in global path or python path
 	

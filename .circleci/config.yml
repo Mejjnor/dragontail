@@ -6,11 +6,11 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
-      - run: mkdir -p my_workspace
-      - run: echo "Trying out workspaces" > my_workspace/echo-output
+      - run: mkdir -p brrbrr
+      - run: echo "Trying out workspaces" > brrbrr/echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
-          root: my_workspace
+          root: brrbrr
           # Must be relative path from root
           paths:
             - echo-output      
@@ -22,10 +22,10 @@ jobs:
       - run: echo "A more familiar hi"  
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: my_workspace
-
+          at: brrbrr
+      - run: cat brrbrr/echo-output
       - run: |
-          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+          if [[ $(cat brrbrr/echo-output) == "Trying out workspaces" ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1
@@ -35,4 +35,6 @@ workflows:
   one_and_two:
     jobs:
       - one
-      - two
+      - two:
+        requires:
+          - one

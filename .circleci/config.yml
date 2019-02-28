@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
-      - run: mkdir -p my_workspace
+      - run: mkdir -p brrbrr
       - run: echo "Trying out workspaces" > brrbrr/echo-output
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
@@ -22,10 +22,10 @@ jobs:
       - run: echo "A more familiar hi"
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: my_workspace
-      - run:
+          at: brrbrr
+      - run: cat brrbrr/echo-output
       - run: |
-          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+          if [[ $(cat brrbrr/echo-output) == "Trying out workspaces" ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1

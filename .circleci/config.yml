@@ -23,6 +23,7 @@ jobs:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: brrbrr
+      - run: ls brrbrr
       - run: cat brrbrr/echo-output
       - run: |
           if [[ $(cat brrbrr/echo-output) == "Trying out workspaces" ]]; then

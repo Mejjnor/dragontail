@@ -2,7 +2,7 @@ version: 2
 jobs:
   one:
     docker:
-      - image: ruby:2.4
+      - image: mejjnor/dragontail:dt-regr
     steps:
       - checkout
       - run: echo "A first hello"

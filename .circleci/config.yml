@@ -2,7 +2,7 @@ version: 2
 jobs:
   one:
     docker:
-      - image: docker/ruby:2.4
+      - image: ruby:2.4
     steps:
       - checkout
       - run: echo "A first hello"

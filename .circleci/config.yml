@@ -1,4 +1,5 @@
 smartass: &smartass
+  - checkout
   - run: echo "A first hello"
   - run: mkdir -p brrbrr
   - run: echo "Trying out workspaces" > brrbrr/echo-output
@@ -9,7 +10,6 @@ jobs:
     docker:
       - image: mejjnor/dragontail:dt-regr
     steps:
-      - checkout
       <<: *smartass
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory

@@ -10,7 +10,7 @@ jobs:
       - image: mejjnor/dragontail:dt-regr
     steps:
       - checkout
-      *smartass
+      <<: *smartass
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: brrbrr

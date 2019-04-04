@@ -7,7 +7,9 @@ jobs:
     steps:
       - checkout
       - run: echo $JOHNNY
-      - run: echo 'export JOHNNY="remember me"' >> $BASH_ENV
+      - run: |
+             echo 'export JOHNNY="remember me"' >> $BASH_ENV
+             source $BASH_ENV
       - run: echo $JOHNNY
       - run: mkdir -p brrbrr
       - run: echo "Trying out workspaces" > brrbrr/echo-output
